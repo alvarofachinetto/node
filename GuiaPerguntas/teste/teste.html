@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="texto" onchange="change()"/>
+    
+</body>
+<script>
+    change = (e) => {
+        translate(texto.value);
+    }
+    translate = (code) =>{
+        let decode;
+        let msg = '';
+        decode = code.split('0');
+        for (let i = 0; i < decode.length; i++) {
+            msg += dictionary(decode[i].charAt(0), decode[i].length);
+        }
+        texto.value = msg;
+    }
+    dictionary = (number, len) =>{
+        const dicionario = ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz', ' '];
+         return dicionario[number-2].charAt(len-1);
+    }
+</script>
+</html>

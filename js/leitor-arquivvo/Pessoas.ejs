@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoas</title>
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <% header.forEach(head => { %> 
+               <th>
+                   <%= head %>
+               </th> 
+            <% }) %>  
+        </thead>
+        <tbody>
+            <% rows.forEach(row => { %> 
+               <td>
+                   <% row.forEach(element => { %>
+                    <td>
+                        <%= element %>
+                    </td>
+                   <% }) %>
+               </td> 
+            <% }) %>  
+        </tbody>
+    </table>
+</body>
+</html>
